@@ -72,8 +72,8 @@
     <IncludePath>D:\opencv3_4_4\install\include;D:\ihealth\ihealth\ihealth\pupiltracker\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>G:\sincruvetest\sincruvetest\APS\include;.\sincruvetest\APS\include;D:\ihealth\ihealth\ihealth\pupiltracker\include;$(IncludePath)</IncludePath>
-    <LibraryPath>.\sincruvetest\APS\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\ihealth\ihealth\ihealth\pupiltracker\include;D:\ihealth\ihealth\ihealth\APS\include;D:\ihealth\ihealth\ihealth;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\ihealth\ihealth\ihealth\pupiltracker\lib;D:\ihealth\ihealth\ihealth\APS\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -83,7 +83,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>APS168.h;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>APS168.lib;pupiltracker.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -125,12 +125,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="control_card.cpp" />
+    <ClCompile Include="D:\ihealth\ihealth\ihealth\control_card.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="sincurve.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="control_card.h" />
+    <ClInclude Include="D:\ihealth\ihealth\ihealth\control_card.h" />
     <ClInclude Include="sincurve.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -26,7 +26,10 @@ public:
 	passivemove();
 	~passivemove();
 
-	void BeginMove();
+	//进行sin曲线运动
+	void BeginSincruveMove();
+	//进行直接点到点运动
+	void BeginPtpMove();
 	void StopMove();
 	void MoveStart();
 	void StartSampling();

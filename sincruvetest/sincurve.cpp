@@ -81,7 +81,7 @@ unsigned int __stdcall ThreadFun(PVOID pParam) {
 	return 0;
 }
 
-void passivemove::BeginMove() {
+void passivemove::BeginSincruveMove() {
 	//初始化
 	ControlCard::GetInstance().Initial();
 	cout << "Initial ok!" << endl;
@@ -203,4 +203,24 @@ void passivemove::InterpolationExport() {
 		dataFile1 << movesample.Interpolation_Data[0][i] << "        " << movesample.Interpolation_Data[1][i] << endl;
 	}
 	dataFile1.close();
+}
+
+void passivemove::BeginPtpMove() {
+	//初始化
+	ControlCard::GetInstance().Initial();
+	cout << "Initial ok!" << endl;
+
+	//复位
+	ControlCard::GetInstance().ResetPosition();
+	cout << "Reset position ok!" << endl;
+
+	//打开电机，离合器
+	ControlCard::GetInstance().SetMotor(MotorOn);
+	ControlCard::GetInstance().SetClutch(ClutchOn);
+	cout << "motor and clutch on!" << endl;
+
+	//开始运动
+	int axis_id = 0;
+	double trip = 100;
+	APS_absolute_move(axis_id , trip / Unit_Convert, 5 / Unit_Convert);
 }

@@ -1,8 +1,12 @@
 #include"sincurve.h"
+#include<iostream>
+
+using namespace std;
 
 int main() {
 	passivemove a;
-	a.BeginMove();
+	a.BeginSincruveMove();
+	//a.BeginPtpMove();
 	while (!a.beginMove) {
 
 	}
